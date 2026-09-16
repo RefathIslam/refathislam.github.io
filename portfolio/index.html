@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Md. Refath Islam</title>
+<meta name="description" content="Md. Refath Islam — Applied Mathematics Researcher, BUET. Evolutionary game theory, cyclic dominance, network Monte Carlo methods and behavioural epidemic modelling.">
+<meta name="author" content="Md. Refath Islam">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Md. Refath Islam — Applied Mathematics Researcher">
+<meta property="og:description" content="Evolutionary game theory, cyclic dominance, network Monte Carlo methods and behavioural epidemic modelling.">
+<meta property="og:image" content="assets/img/profile.jpg">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0D12'/><rect x='14' y='14' width='30' height='30' fill='%236FA8FF'/><rect x='56' y='14' width='30' height='30' fill='%23D8A657'/><rect x='14' y='56' width='30' height='30' fill='%23E4694F'/><rect x='56' y='56' width='30' height='30' fill='%236FA8FF'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__name" href="#top">Md. Refath Islam</a>
+    <div class="nav__links">
+      <a href="#research">Research</a>
+      <a href="#thesis">Thesis</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============================================================== HERO -->
+<section class="hero wrap" id="top">
+  <div class="hero__grid">
+    <div>
+      <div class="hero__id">
+        <img class="hero__photo" src="assets/img/profile.jpg" alt="Portrait of Md. Refath Islam" width="640" height="640">
+        <div>
+          <h1>Md. Refath Islam</h1>
+          <p class="hero__pronoun">He / Him / His</p>
+        </div>
+      </div>
+
+      <p class="hero__role">Applied Mathematics Researcher &middot; <a href="https://www.buet.ac.bd/" rel="noopener">BUET</a></p>
+      <p class="hero__lede">
+        I work on evolutionary game theory &mdash; how cooperation survives, collapses
+        and reorganises itself in populations that are structured, noisy and strategically
+        self-interested. My models run from replicator equations through Monte Carlo
+        simulation on networks to agent-based simulation, where every choice is itself a
+        strategy under selection. I also work with multi-agent reinforcement
+        learning, letting agents learn their own strategies from experience rather
+        than copy whichever neighbour is doing best, and with machine learning
+        applied to real data.
+      </p>
+
+      <div class="hero__stats">
+        <div>
+          <div class="stat__n">05</div>
+          <div class="stat__l">Journal articles</div>
+        </div>
+        <div>
+          <div class="stat__n">02</div>
+          <div class="stat__l">Under review</div>
+        </div>
+        <div>
+          <div class="stat__n">02</div>
+          <div class="stat__l">Conference talks</div>
+        </div>
+        <div>
+          <div class="stat__n">01</div>
+          <div class="stat__l">Research award</div>
+        </div>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn btn--primary" href="assets/cv/Md_Refath_Islam_CV.pdf">Curriculum vitae &darr;</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=_lyZQzUAAAAJ&amp;hl=en" rel="noopener">Google Scholar</a>
+        <a class="btn" href="https://www.researchgate.net/profile/Md-Islam-3036" rel="noopener">ResearchGate</a>
+        <a class="btn" href="https://www.linkedin.com/in/muhammad-refath-islam/" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:refathislam168@gmail.com">Email</a>
+      </div>
+    </div>
+
+    <figure class="lattice">
+      <canvas id="lattice" width="160" height="160" role="img"
+        aria-label="Rock-paper-scissors cyclic cellular automaton: three colours of strategy chasing each other into rotating spiral waves on a 160 by 160 lattice."></canvas>
+      <div class="lattice__meta">
+        <div class="legend">
+          <span><i class="swatch swatch--r"></i>Rock</span>
+          <span><i class="swatch swatch--p"></i>Paper</span>
+          <span><i class="swatch swatch--s"></i>Scissors</span>
+        </div>
+        <span id="lattice-fc">generation &mdash;</span>
+      </div>
+      <figcaption class="lattice__cap">
+        Rock&ndash;paper&ndash;scissors on a 160 &times; 160 lattice, run as a cyclic cellular
+        automaton: a cell is invaded once three of its eight neighbours hold the strategy
+        that beats it. Rock crushes scissors, scissors cut paper, paper covers rock, so
+        no strategy can ever win &mdash; and instead of settling, the population winds
+        itself into rotating spiral waves. Cyclic dominance like this is one of the
+        structures I study.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========================================================== RESEARCH -->
+<section class="wrap" id="research">
+  <h2>Research interests</h2>
+
+  <div class="prose" style="margin-bottom: 26px;">
+    <p>
+      Most models treat people as passive numbers moving between states. Real people decide
+      &mdash; whether to isolate, whether to pay a cost others can free-ride on &mdash; and
+      those decisions feed straight back into the system they are responding to. My work sits
+      in that gap: populations whose payoffs depend on what everyone else is doing, and whose
+      strategies update by imitation, learning or selection.
+    </p>
+    <p>
+      Change the interaction structure &mdash; a lattice, a scale-free network, an asymmetric
+      dyad &mdash; and the same dilemma resolves into a completely different attractor. What
+      interests me most now is where those strategies come from at all, since in almost every
+      model, mine included, the strategy set is handed to the agents by the modeller. I want
+      to take that further into machine learning and generative AI, multi-armed bandit
+      problems, differential games and control systems.
+    </p>
+  </div>
+
+  <ul class="chips">
+    <li>Evolutionary game theory &amp; population dynamics</li>
+    <li>Replicator dynamics</li>
+    <li>Network Monte Carlo methods</li>
+    <li>Nonlinear dynamics &amp; bifurcation theory</li>
+    <li>Multi-agent reinforcement learning</li>
+    <li>Stochastic &amp; symmetric dynamical systems</li>
+    <li>Cyclic dominance</li>
+    <li>Bistable &amp; oscillatory transitions</li>
+    <li>Machine learning &amp; generative AI</li>
+    <li>Multi-armed bandit problems</li>
+    <li>Differential games</li>
+    <li>Control systems</li>
+  </ul>
+</section>
+
+<!-- ============================================================ THESIS -->
+<section class="wrap" id="thesis">
+  <h2>Influence of cooperative space and vaccination behaviour on epidemic disease dynamics under an emergency</h2>
+
+  <article class="card card--wide card--banner">
+    <figure class="card__figure card__figure--banner">
+      <img src="assets/img/msc-defense.jpg" alt="Md. Refath Islam with his MSc thesis examination committee at BUET, in front of the title slide of his defence." width="1600" height="918" loading="lazy">
+      <figcaption>MSc thesis defence, Department of Mathematics, BUET &mdash; December 2025.</figcaption>
+    </figure>
+    <div>
+      <p class="card__tag">2023&ndash;2025 &middot; Department of Mathematics, BUET</p>
+
+      <p>
+        Containing an outbreak is not only an epidemiological problem. Non-pharmaceutical
+        interventions &mdash; distancing, masking, staying away from crowds &mdash; work only
+        if enough people choose to follow them, and people reach that choice much the way they
+        decide whether to be vaccinated: weighing a private cost against a perceived benefit
+        as the outbreak moves.
+      </p>
+
+      <p>
+        The thesis couples both decisions into a single disease model. Evolutionary game theory
+        supplies the rule by which vaccination and NPI strategies spread, a compartmental model
+        supplies the epidemic they are responding to, and each feeds back into the other.
+        Populations that cooperate fully hold incidence far below populations that defect
+        &mdash; far enough that collective behaviour, not the pathogen alone, decides the
+        outcome.
+      </p>
+
+      <p class="meta-line">
+        Supervised by
+        <a href="https://math.buet.ac.bd/Web/MemberDetails/858fbcd3-edf6-4ed1-9e31-c7c3fc6ff534" rel="noopener">Dr. K. M. Ariful Kabir</a>,
+        Associate Professor, Department of Mathematics, BUET.<br>
+        Manuscript under review at <em>Heliyon</em> &middot; recognised with the Forum 86 Research
+        Excellence Award, 2026.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Vaccination game</span>
+        <span class="tag">NPI compliance</span>
+        <span class="tag">Evolutionary game theory</span>
+        <span class="tag">Compartmental model</span>
+        <span class="tag">Public-health policy</span>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ========================================================== PROJECTS -->
+<section class="wrap" id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <article class="card">
+      <p class="card__tag">Research assistantship &middot; UGC-funded &middot; 2025</p>
+      <h3>Vaccine hesitancy and HPV in Bangladesh</h3>
+      <p>
+        A University Grants Commission&ndash;funded study of HPV vaccine hesitancy. I designed
+        and ran a multi-city survey, built an SVIR model with gender-differentiated vaccination
+        and waning immunity, and combined the two &mdash; through evolutionary game theory and
+        machine learning &mdash; into policy findings for gender-targeted vaccination.
+      </p>
+      <div class="tags">
+        <span class="tag">SVIR model</span>
+        <span class="tag">R&#8320; analysis</span>
+        <span class="tag">Survey design</span>
+        <span class="tag">Logistic regression</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <p class="card__tag">Research assistantship &middot; Bangla Academy &middot; 2025&ndash;2026</p>
+      <h3>A Bangla textbook on Laplace transforms</h3>
+      <p>
+        As a Research Assistant at the Bangla Academy, I helped write a Bangla-language
+        academic book on Laplace transformation &mdash; finding the problems, building the
+        worked examples and exercises, and taking the manuscript through to final copy. The
+        hard part was linguistic rather than mathematical: keeping the rigour intact in clear
+        Bangla.
+      </p>
+      <div class="tags">
+        <span class="tag">Laplace transform</span>
+        <span class="tag">Problem sets</span>
+        <span class="tag">Technical writing in Bangla</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ====================================================== PUBLICATIONS -->
+<section class="wrap" id="publications">
+  <h2>Publications</h2>
+
+  <h3 class="subhead">Peer-reviewed</h3>
+
+  <ol class="bib">
+
+    <li>
+      <div class="bib__body">
+        <h3>The Role of Punishment and Loners in Shaping Cooperation across Network Topologies</h3>
+        <p class="authors">Mehedi Hasan, <b>Md. Refath Islam</b>, K. M. Ariful Kabir</p>
+        <p class="venue">
+          <span class="journal">Chaos, Solitons &amp; Fractals</span>
+          <span>Elsevier</span>
+          <span>2026&#8202;&ndash;&#8202;07</span>
+          <a href="https://doi.org/10.1016/j.chaos.2026.118922" rel="noopener">10.1016/j.chaos.2026.118922</a>
+        </p>
+      </div>
+      <figure class="bib__fig">
+        <a href="assets/img/papers/punishment-loners.jpg" target="_blank" rel="noopener">
+          <img src="assets/img/papers/punishment-loners.jpg" alt="Figure from: The Role of Punishment and Loners in Shaping Cooperation across Network Topologies"
+               onerror="this.closest('figure').remove()">
+        </a>
+      </figure>
+    </li>
+
+    <li>
+      <div class="bib__body">
+        <h3>Q-Learning Driven Adaptive Decision Rules and Environmental Transformation in Three-Strategy Evolutionary Games</h3>
+        <p class="authors">Saleha Begum, <b>Md. Refath Islam</b>, K. M. Ariful Kabir</p>
+        <p class="venue">
+          <span class="journal">Chaos, Solitons &amp; Fractals</span>
+          <span>Elsevier</span>
+          <span>2026&#8202;&ndash;&#8202;02</span>
+          <a href="https://doi.org/10.1016/j.chaos.2026.118052" rel="noopener">10.1016/j.chaos.2026.118052</a>
+        </p>
+      </div>
+      <figure class="bib__fig">
+        <a href="assets/img/papers/q-learning-three-strategy.jpg" target="_blank" rel="noopener">
+          <img src="assets/img/papers/q-learning-three-strategy.jpg" alt="Figure from: Q-Learning Driven Adaptive Decision Rules and Environmental Transformation in Three-Strategy Evolutionary Games"
+               onerror="this.closest('figure').remove()">
+        </a>
+      </figure>
+    </li>
+
+    <li>
+      <div class="bib__body">
+        <h3>Unveiling Socio-Demographic Determinants of Low Birth Weight Using Machine Learning Techniques</h3>
+        <p class="authors">Mohammad Safi Uddin, <b>Md. Refath Islam</b>, K. M. Ariful Kabir</p>
+        <p class="venue">
+          <span class="journal">PLOS Global Public Health</span>
+          <span>2026&#8202;&ndash;&#8202;01</span>
+          <a href="https://doi.org/10.1371/journal.pgph.0005745" rel="noopener">10.1371/journal.pgph.0005745</a>
+        </p>
+      </div>
+      <figure class="bib__fig">
+        <a href="assets/img/papers/low-birth-weight-ml.jpg" target="_blank" rel="noopener">
+          <img src="assets/img/papers/low-birth-weight-ml.jpg" alt="Figure from: Unveiling Socio-Demographic Determinants of Low Birth Weight Using Machine Learning Techniques"
+               onerror="this.closest('figure').remove()">
+        </a>
+      </figure>
+    </li>
+
+    <li>
+      <div class="bib__body">
+        <h3>Strategic Evolution under Varying Dilemma Strength and Social Efficiency Deficit in Asymmetric Dyadic Game</h3>
+        <p class="authors">Mst. Niger Sultana, <b>Md. Refath Islam</b>, K. M. Ariful Kabir</p>
+        <p class="venue">
+          <span class="journal">Chaos, Solitons &amp; Fractals</span>
+          <span>Elsevier</span>
+          <span>2025&#8202;&ndash;&#8202;07</span>
+          <a href="https://doi.org/10.1016/j.chaos.2025.117594" rel="noopener">10.1016/j.chaos.2025.117594</a>
+        </p>
+      </div>
+      <figure class="bib__fig">
+        <a href="assets/img/papers/asymmetric-dyadic-game.jpg" target="_blank" rel="noopener">
+          <img src="assets/img/papers/asymmetric-dyadic-game.jpg" alt="Figure from: Strategic Evolution under Varying Dilemma Strength and Social Efficiency Deficit in Asymmetric Dyadic Game"
+               onerror="this.closest('figure').remove()">
+        </a>
+      </figure>
+    </li>
+
+    <li>
+      <div class="bib__body">
+        <h3>Assessing the Social Dilemmas in Eco-Evolutionary Dynamics of Cooperation, Cheating, and Resistance under Antibiotic Pressure</h3>
+        <p class="authors">Saleha Begum, <b>Md. Refath Islam</b>, K. M. Ariful Kabir</p>
+        <p class="venue">
+          <span class="journal">Applied Mathematics and Computation</span>
+          <span>Elsevier</span>
+          <span>2025&#8202;&ndash;&#8202;06</span>
+          <a href="https://doi.org/10.1016/j.amc.2025.129793" rel="noopener">10.1016/j.amc.2025.129793</a>
+        </p>
+      </div>
+      <figure class="bib__fig">
+        <a href="assets/img/papers/antibiotic-resistance.jpg" target="_blank" rel="noopener">
+          <img src="assets/img/papers/antibiotic-resistance.jpg" alt="Figure from: Assessing the Social Dilemmas in Eco-Evolutionary Dynamics of Cooperation, Cheating, and Resistance under Antibiotic Pressure"
+               onerror="this.closest('figure').remove()">
+        </a>
+      </figure>
+    </li>
+
+  </ol>
+
+  <h3 class="subhead" style="margin-top: 52px;">Under review</h3>
+  <ol class="bib">
+    <li>
+      <div class="bib__body">
+        <h3>Trait-Mediated Evolutionary Dynamics in the Optional Prisoner's Dilemma (OPD) Game</h3>
+        <p class="authors"><b>Md. Refath Islam</b>, Mst. Niger Sultana, Fahimur Rahman Shuvo, K. M. Ariful Kabir</p>
+        <p class="venue">
+          <span class="journal">Royal Society Open Science</span>
+        </p>
+      </div>
+      <figure class="bib__fig">
+        <a href="assets/img/papers/optional-prisoners-dilemma.jpg" target="_blank" rel="noopener">
+          <img src="assets/img/papers/optional-prisoners-dilemma.jpg" alt="Figure from: Trait-Mediated Evolutionary Dynamics in the Optional Prisoner's Dilemma Game"
+               onerror="this.closest('figure').remove()">
+        </a>
+      </figure>
+    </li>
+    <li>
+      <div class="bib__body">
+        <h3>Influence of Cooperative Space and Vaccination Behavior on Epidemic Disease Dynamics under an Emergency</h3>
+        <p class="authors"><b>Md. Refath Islam</b>, K. M. Ariful Kabir</p>
+        <p class="venue">
+          <span class="journal">Heliyon</span>
+          <span class="pill pill--gold">MSc thesis</span>
+        </p>
+      </div>
+      <figure class="bib__fig">
+        <a href="assets/img/papers/cooperative-space-vaccination.jpg" target="_blank" rel="noopener">
+          <img src="assets/img/papers/cooperative-space-vaccination.jpg" alt="Figure from: Influence of Cooperative Space and Vaccination Behavior on Epidemic Disease Dynamics under an Emergency"
+               onerror="this.closest('figure').remove()">
+        </a>
+      </figure>
+    </li>
+  </ol>
+</section>
+
+<!-- ============================================================= TALKS -->
+<section class="wrap" id="talks">
+  <h2>Talks</h2>
+
+  <div class="rail">
+    <div class="entry">
+      <div class="entry__date">05&ndash;06 Feb 2025</div>
+      <div class="entry__body">
+        <h3>Analyzing Maternal and Demographic Factors Affecting Low Birth Weight (LBW) in Bangladesh Using a Machine Learning Approach</h3>
+        <p class="meta-line">A. F. Mujibur Rahman &mdash; Bangladesh Mathematical Society 3rd National Mathematics Conference 2024</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__date">05&ndash;07 Dec 2024</div>
+      <div class="entry__body">
+        <h3>Exploring Tumor Evolution and Resistance through a Three-Strategy Evolutionary Game Theory Model</h3>
+        <p class="meta-line">3rd International Conference on Mathematical Analysis and Applications in Modeling (ICMAAM 2024)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ AWARDS -->
+<section class="wrap" id="awards">
+  <h2>Research Excellence Award, 2026</h2>
+
+  <div class="award">
+    <div>
+      <p class="prose" style="margin-bottom:14px;">
+        Awarded at the <strong>Forum 86 Research Excellence Awards Ceremony 2026</strong> at
+        BUET, as a research contributor for the work on the influence of cooperative space and
+        vaccination behaviour on epidemic disease dynamics under an emergency.
+      </p>
+      <p class="meta-line">
+        Forum 86 &middot; BUET, Dhaka &middot; June 2026<br>
+        Certificate presented by the Chief Guest, Professor Dr. Ekramul Hoque,
+        Honourable Vice-Chancellor, BUET.
+      </p>
+    </div>
+    <figure style="margin:0;">
+      <img src="assets/img/award-forum86.jpg" alt="Md. Refath Islam receiving his Research Excellence Award certificate on stage at the Forum 86 Awards Ceremony 2026." width="1600" height="1067" loading="lazy">
+      <figcaption>Receiving the award, Forum 86 Research Excellence Awards Ceremony 2026.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========================================================= EDUCATION -->
+<section class="wrap" id="education">
+  <h2>Education</h2>
+
+  <div class="rail" style="margin-bottom: 56px;">
+    <div class="entry">
+      <div class="entry__date">2023&#8202;&ndash;&#8202;06<br>2025&#8202;&ndash;&#8202;12</div>
+      <div class="entry__body">
+        <h3>Master of Science (MSc), Mathematics</h3>
+        <p class="entry__where">Department of Mathematics, Bangladesh University of Engineering and Technology (BUET)</p>
+        <p class="prose" style="margin-bottom:0;">
+          Thesis: <em>Influence of Cooperative Space and Vaccination Behavior on Epidemic
+          Disease Dynamics under an Emergency</em>
+        </p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__date">2018&#8202;&ndash;&#8202;01<br>2022&#8202;&ndash;&#8202;10</div>
+      <div class="entry__body">
+        <h3>Bachelor of Science (BSc), Mathematics</h3>
+        <p class="entry__where">University of Dhaka</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__date">2017</div>
+      <div class="entry__body">
+        <h3>Higher Secondary Certificate (HSC), Science</h3>
+        <p class="entry__where">Collectorate School and College, Rangpur</p>
+        <p class="meta-line">GPA 5.00 / 5.00 &middot; Grade A+</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__date">2015</div>
+      <div class="entry__body">
+        <h3>Secondary School Certificate (SSC), Science</h3>
+        <p class="entry__where">Collectorate School and College, Rangpur</p>
+        <p class="meta-line">GPA 5.00 / 5.00 &middot; Grade A+</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Experience</h2>
+  <div class="rail" style="margin-bottom: 56px;">
+    <div class="entry">
+      <div class="entry__date">2025&#8202;&ndash;&#8202;06<br>2026&#8202;&ndash;&#8202;02</div>
+      <div class="entry__body">
+        <h3>Research Assistant <em style="font-style:normal;color:var(--text-faint);font-size:15px;">&middot; part-time</em></h3>
+        <p class="entry__where">Bangla Academy, Ministry of Cultural Affairs, Dhaka</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__date">2025&#8202;&ndash;&#8202;02<br>2025&#8202;&ndash;&#8202;06</div>
+      <div class="entry__body">
+        <h3>Research Assistant</h3>
+        <p class="entry__where">UGC-funded HPV vaccine hesitancy study, Department of Mathematics, BUET</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__date">2023&#8202;&ndash;&#8202;11<br>2025&#8202;&ndash;&#8202;12</div>
+      <div class="entry__body">
+        <h3>Graduate Teaching Assistant</h3>
+        <p class="entry__where">Department of Mathematics, BUET, Dhaka</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Certificates</h2>
+  <div class="rail" style="margin-bottom: 56px;">
+    <div class="entry">
+      <div class="entry__date">2024&#8202;&ndash;&#8202;09</div>
+      <div class="entry__body">
+        <h3>Introduction to Artificial Intelligence</h3>
+        <p class="entry__where">Bangladesh&ndash;Korea Information Access Center (BK-IAC), Department of Computer Science and Engineering, BUET</p>
+        <p class="meta-line"><span class="pill pill--gold">Grade A+</span></p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Leadership &amp; event management</h2>
+  <div class="rail" style="margin-bottom: 56px;">
+    <div class="entry">
+      <div class="entry__date">16 Jan 2026</div>
+      <div class="entry__body">
+        <h3>Organizer &mdash; 16th National Undergraduate Mathematics Olympiad 2025</h3>
+        <p class="entry__where">Department of Mathematics, BUET</p>
+        <ul>
+          <li>Supervised examination activities, assisted with result processing and award arrangements, and worked closely with the organizing committee to ensure smooth execution.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__date">05&ndash;06 Feb 2025</div>
+      <div class="entry__body">
+        <h3>Conference Organizer &mdash; BMS 3rd National Mathematics Conference 2024</h3>
+        <p class="entry__where">A. F. Mujibur Rahman &mdash; Bangladesh Mathematical Society, Department of Mathematics, BUET</p>
+        <ul>
+          <li>Coordinated logistics, managed registration, assisted with promotion, arranged catering and facilitated technical support across the two-day programme.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>Tools</h2>
+  <div class="skillgrid">
+    <div>
+      <h3>Programming</h3>
+      <ul>
+        <li>Python</li>
+        <li>C++</li>
+        <li>Fortran</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Scientific computing</h3>
+      <ul>
+        <li>Mathematica</li>
+        <li>Monte Carlo simulation</li>
+        <li>Numerical ODE integration</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Software</h3>
+      <ul>
+        <li>Visual Studio Code</li>
+        <li>PyCharm</li>
+        <li>Microsoft Office</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== CONTACT -->
+<section class="wrap" id="contact">
+  <h2>Where I want to go next</h2>
+  <p class="prose" style="margin-bottom: 28px;">
+    I am looking for a PhD position, and for collaborators, in the space where learning meets
+    game dynamics. Alongside evolutionary game theory I want to work on machine learning and
+    generative AI, multi-armed bandit problems, multi-agent simulation and differential games
+    &mdash; the thread running through all of them being agents that must decide under
+    uncertainty while everyone around them is deciding too. If you work on any of that, I
+    would like to hear from you.
+  </p>
+
+  <div class="contact">
+    <a class="cbox" href="mailto:refathislam168@gmail.com">
+      <p class="cbox__l">Email</p>
+      <p class="cbox__v">refathislam168@gmail.com</p>
+    </a>
+    <a class="cbox" href="tel:+8801521555059">
+      <p class="cbox__l">Phone</p>
+      <p class="cbox__v">+880 1521 555059</p>
+    </a>
+    <a class="cbox" href="https://scholar.google.com/citations?user=_lyZQzUAAAAJ&amp;hl=en" rel="noopener">
+      <p class="cbox__l">Google Scholar</p>
+      <p class="cbox__v">Citations &amp; profile &rarr;</p>
+    </a>
+    <a class="cbox" href="https://www.researchgate.net/profile/Md-Islam-3036" rel="noopener">
+      <p class="cbox__l">ResearchGate</p>
+      <p class="cbox__v">Full-text preprints &rarr;</p>
+    </a>
+    <a class="cbox" href="https://www.linkedin.com/in/muhammad-refath-islam/" rel="noopener">
+      <p class="cbox__l">LinkedIn</p>
+      <p class="cbox__v">muhammad-refath-islam &rarr;</p>
+    </a>
+    <div class="cbox">
+      <p class="cbox__l">Based in</p>
+      <p class="cbox__v">Department of Mathematics, BUET, Dhaka 1000, Bangladesh</p>
+    </div>
+    <a class="cbox" href="assets/cv/Md_Refath_Islam_CV.pdf">
+      <p class="cbox__l">Curriculum vitae</p>
+      <p class="cbox__v">Download PDF &darr;</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <span>&copy; 2026 Md. Refath Islam</span>
+  <span>Built as a static site, hosted on GitHub Pages</span>
+</footer>
+
+<script src="assets/js/lattice.js"></script>
+</body>
+</html>
